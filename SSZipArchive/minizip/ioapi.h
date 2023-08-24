@@ -98,7 +98,7 @@ typedef unsigned long long int ZPOS64_T;
 
 
 #ifdef __cplusplus
-extern "C" {
+__attribute__((visibility("hidden"))) "C" {
 #endif
 
 
@@ -164,8 +164,8 @@ typedef struct zlib_filefunc64_def_s
     voidpf              opaque;
 } zlib_filefunc64_def;
 
-void fill_fopen64_filefunc OF((zlib_filefunc64_def* pzlib_filefunc_def));
-void fill_fopen_filefunc OF((zlib_filefunc_def* pzlib_filefunc_def));
+__attribute__((visibility("hidden"))) void fill_fopen64_filefunc OF((zlib_filefunc64_def* pzlib_filefunc_def));
+__attribute__((visibility("hidden"))) void fill_fopen_filefunc OF((zlib_filefunc_def* pzlib_filefunc_def));
 
 /* now internal definition, only for zip.c and unzip.h */
 typedef struct zlib_filefunc64_32_def_s

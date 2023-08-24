@@ -8,7 +8,7 @@
 #define _zip_tools_H
 
 #ifdef __cplusplus
-extern "C" {
+__attribute__((visibility("hidden"))) "C" {
 #endif
 
 #ifndef _ZLIB_H
@@ -22,7 +22,7 @@ extern "C" {
    fileOut: output file after recovery
    fileOutTmp: temporary file name used for recovery
 */
-extern int ZEXPORT unzRepair(const char* file,
+__attribute__((visibility("hidden"))) int ZEXPORT unzRepair(const char* file,
                              const char* fileOut,
                              const char* fileOutTmp,
                              uLong* nRecovered,
